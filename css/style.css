@@ -1,25 +1,38 @@
 /* =====================================================
-   GLOBAL
+   GLOBAL RESET
 ===================================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
 }
 
 body {
     background: #ffffff;
     color: #333;
-    line-height: 1.7;
+    line-height: 1.9;
+}
+
+/* =====================================================
+   COLOR VARIABLES
+===================================================== */
+:root {
+    --green: #2f855a;
+    --green-dark: #276749;
+    --green-soft: #f0fdf4;
+    --gray-bg: #f8faf9;
 }
 
 /* =====================================================
    NAVBAR
 ===================================================== */
 header {
-    background: #2f855a;
+    background: var(--green);
     padding: 15px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .navbar {
@@ -33,7 +46,7 @@ header {
     display: flex;
     align-items: center;
     color: #fff;
-    font-weight: bold;
+    font-weight: 600;
     font-size: 18px;
 }
 
@@ -45,8 +58,7 @@ header {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 18px;
-    flex-wrap: wrap;
+    gap: 22px;
 }
 
 .nav-links a {
@@ -60,7 +72,7 @@ header {
 }
 
 /* =====================================================
-   HERO WITH BACKGROUND IMAGE
+   HERO SECTION
 ===================================================== */
 .hero {
     background:
@@ -68,186 +80,192 @@ header {
         url("../assets/img/hero.jpg");
     background-size: cover;
     background-position: center;
-    color: #fff;
-    padding: 110px 20px;
+    padding: 130px 20px;
     text-align: center;
+    color: #fff;
 }
 
 .hero h1 {
-    font-size: 32px;
-    margin-bottom: 12px;
+    font-size: 34px;
+    margin-bottom: 14px;
+    font-weight: 600;
 }
 
 .hero p {
-    font-size: 14px;
+    font-size: 15px;
     max-width: 900px;
     margin: auto;
-    opacity: 0.95;
 }
 
 /* =====================================================
-   SECTION SYSTEM
+   SECTION
 ===================================================== */
 .section {
-    padding: 60px 0;
+    padding: 70px 0;
 }
 
-.section-divider {
-    width: 80px;
-    height: 4px;
-    background: #2f855a;
-    margin: 15px 0 25px 0;
+.section:nth-child(even) {
+    background: var(--gray-bg);
 }
 
 .content {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: auto;
     padding: 0 20px;
 }
 
 .content h2 {
-    color: #2f855a;
-    margin-bottom: 5px;
+    color: var(--green);
+    font-size: 24px;
+    font-weight: 600;
 }
 
 /* =====================================================
-   BUTTONS
+   SECTION DIVIDER
+===================================================== */
+.section-divider {
+    width: 70px;
+    height: 4px;
+    background: var(--green);
+    margin: 16px 0 28px 0;
+}
+
+/* =====================================================
+   OFFICIAL HIGHLIGHT BOX
+===================================================== */
+.official-highlight {
+    background: var(--green-soft);
+    border-left: 5px solid var(--green);
+    padding: 16px 20px;
+    margin: 22px 0;
+    font-size: 14px;
+}
+
+/* =====================================================
+   BUTTON
 ===================================================== */
 .btn-green {
     display: inline-block;
-    margin-top: 15px;
-    background: #2f855a;
+    margin-top: 20px;
+    background: var(--green);
     color: #fff;
-    padding: 10px 18px;
-    border-radius: 5px;
+    padding: 11px 24px;
+    border-radius: 6px;
     text-decoration: none;
     font-size: 13px;
     transition: 0.3s;
 }
 
 .btn-green:hover {
-    background: #276749;
+    background: var(--green-dark);
+    transform: translateY(-2px);
 }
 
 /* =====================================================
-   TABLE
+   CARD (STRUKTUR)
 ===================================================== */
-.table-wrapper {
-    overflow-x: auto;
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+    margin-top: 35px;
 }
 
+.member-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+    transition: 0.35s;
+}
+
+.member-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+.member-card img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 12px;
+}
+
+.member-card h4 {
+    color: var(--green);
+    margin-bottom: 4px;
+    font-size: 16px;
+}
+
+.member-card span {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.member-card p {
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+/* =====================================================
+   TABLE (DAFTAR HUKUM)
+===================================================== */
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 15px;
+    margin-top: 18px;
 }
 
-table th {
-    background: #2f855a;
-    color: #fff;
-    padding: 10px;
+table th,
+table td {
+    border: 1px solid #ddd;
+    padding: 12px;
     font-size: 14px;
 }
 
-table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    font-size: 13px;
+table th {
+    background: var(--green);
+    color: #fff;
 }
 
 .doc-btn {
-    background: #2f855a;
+    background: var(--green);
     color: #fff;
-    padding: 6px 12px;
+    padding: 6px 14px;
     border-radius: 4px;
-    text-decoration: none;
     font-size: 12px;
-}
-
-.doc-btn:hover {
-    background: #276749;
+    text-decoration: none;
 }
 
 /* =====================================================
-   GALLERY
+   CONTACT
 ===================================================== */
-.gallery {
+.contact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    margin-top: 30px;
 }
 
-.gallery-item {
-    background: #ffffff;
-    border-radius: 6px;
-    overflow: hidden;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-}
-
-.gallery-item img {
+.map-box iframe {
     width: 100%;
-    height: 160px;
-    object-fit: cover;
-}
-
-.gallery-item p {
-    padding: 10px;
-    font-size: 13px;
-}
-
-/* =====================================================
-   FORM
-===================================================== */
-.form-box {
-    max-width: 380px;
-    margin: auto;
-    background: #ffffff;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-.form-box label {
-    font-size: 13px;
-    margin-top: 10px;
-    display: block;
-}
-
-.form-box input,
-.form-box textarea {
-    width: 100%;
-    margin-top: 5px;
-    padding: 8px;
-    font-size: 13px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.form-box button {
-    margin-top: 15px;
-    width: 100%;
-    background: #2f855a;
-    color: #fff;
+    height: 330px;
     border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.form-box button:hover {
-    background: #276749;
+    border-radius: 10px;
 }
 
 /* =====================================================
    FOOTER
 ===================================================== */
 footer {
-    background: #2f855a;
+    background: var(--green);
     color: #fff;
     text-align: center;
-    padding: 15px;
+    padding: 18px;
     font-size: 13px;
-    margin-top: 60px;
+    margin-top: 70px;
 }
 
 /* =====================================================
@@ -256,10 +274,122 @@ footer {
 .fade-in {
     opacity: 0;
     transform: translateY(25px);
-    transition: all 0.8s ease;
+    transition: 0.9s ease;
 }
 
 .fade-in.show {
     opacity: 1;
     transform: translateY(0);
+}
+/* =========================
+   SECTION DIVIDER
+========================= */
+.divider {
+    width: 80px;
+    height: 4px;
+    background: #0f766e;
+    margin: 15px auto 30px;
+    border-radius: 5px;
+}
+
+/* =========================
+   STRUKTUR ORGANISASI
+========================= */
+.struktur-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.struktur-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+}
+
+.struktur-card:hover {
+    transform: translateY(-8px);
+}
+
+.struktur-card img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #0f766e;
+    margin-bottom: 15px;
+}
+
+.struktur-card h3 {
+    margin: 10px 0 5px;
+    font-size: 18px;
+}
+
+.struktur-card span {
+    color: #0f766e;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.struktur-card p {
+    font-size: 14px;
+    margin-top: 10px;
+    color: #555;
+}
+
+/* =========================
+   REVEAL ANIMATION
+========================= */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* =========================
+   UNIT USAHA
+========================= */
+
+.usaha-section {
+    margin-bottom: 70px;
+}
+
+.usaha-section h3 {
+    color: #0f766e;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.usaha-section p {
+    max-width: 900px;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.usaha-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+.usaha-gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.usaha-gallery img:hover {
+    transform: scale(1.04);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }

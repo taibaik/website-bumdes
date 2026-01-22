@@ -1,32 +1,19 @@
-// =======================================
-// BUMDES WEBSITE SCRIPT
+// ===============================
 // Scroll Reveal Animation
-// =======================================
+// ===============================
+const reveals = document.querySelectorAll(".reveal");
 
-document.addEventListener("DOMContentLoaded", function () {
+function revealOnScroll() {
+  for (let i = 0; i < reveals.length; i++) {
+    const windowHeight = window.innerHeight;
+    const elementTop = reveals[i].getBoundingClientRect().top;
+    const elementVisible = 120;
 
-    const elements = document.querySelectorAll(".fade-in");
-
-    // If browser does not support IntersectionObserver
-    if (!("IntersectionObserver" in window)) {
-        elements.forEach(el => el.classList.add("show"));
-        return;
+    if (elementTop < windowHeight - elementVisible) {
+      reveals[i].classList.add("active");
     }
+  }
+}
 
-    const observer = new IntersectionObserver(
-        (entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("show");
-                    observer.unobserve(entry.target);
-                }
-            });
-        },
-        {
-            threshold: 0.15
-        }
-    );
-
-    elements.forEach(el => observer.observe(el));
-
-});
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
