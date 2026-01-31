@@ -1,18 +1,20 @@
 // ===============================
 // Scroll Reveal Animation
 // ===============================
-const reveals = document.querySelectorAll(".reveal");
+
+const reveals = document.querySelectorAll(".reveal, .fade-in");
 
 function revealOnScroll() {
-  for (let i = 0; i < reveals.length; i++) {
     const windowHeight = window.innerHeight;
-    const elementTop = reveals[i].getBoundingClientRect().top;
     const elementVisible = 120;
 
-    if (elementTop < windowHeight - elementVisible) {
-      reveals[i].classList.add("active");
-    }
-  }
+    reveals.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+
+        if (elementTop < windowHeight - elementVisible) {
+            element.classList.add("active", "show");
+        }
+    });
 }
 
 window.addEventListener("scroll", revealOnScroll);

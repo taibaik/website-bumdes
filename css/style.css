@@ -72,12 +72,12 @@ header {
 }
 
 /* =====================================================
-   HERO SECTION
+   HERO
 ===================================================== */
 .hero {
     background:
-        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-        url("../assets/img/hero.jpg");
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url("../assets/img/background.jpeg");
     background-size: cover;
     background-position: center;
     padding: 130px 20px;
@@ -104,7 +104,7 @@ header {
     padding: 70px 0;
 }
 
-.section:nth-child(even) {
+.gray {
     background: var(--gray-bg);
 }
 
@@ -131,7 +131,7 @@ header {
 }
 
 /* =====================================================
-   OFFICIAL HIGHLIGHT BOX
+   OFFICIAL HIGHLIGHT
 ===================================================== */
 .official-highlight {
     background: var(--green-soft);
@@ -162,81 +162,91 @@ header {
 }
 
 /* =====================================================
-   CARD (STRUKTUR)
+   STRUKTUR
 ===================================================== */
-.card-grid {
+.struktur-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 28px;
-    margin-top: 35px;
+    gap: 30px;
+    margin-top: 40px;
 }
 
-.member-card {
-    background: #fff;
-    border: 1px solid #e5e5e5;
-    border-radius: 10px;
+.struktur-card {
+    background: #ffffff;
+    border-radius: 12px;
     padding: 25px;
     text-align: center;
-    transition: 0.35s;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
 }
 
-.member-card:hover {
+.struktur-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 28px rgba(0,0,0,0.12);
 }
 
-.member-card img {
-    width: 110px;
-    height: 110px;
+.struktur-card img {
+    width: 140px;
+    height: 140px;
     object-fit: cover;
     border-radius: 50%;
-    margin-bottom: 12px;
+    border: 4px solid var(--green);
+    margin-bottom: 15px;
 }
 
-.member-card h4 {
+.struktur-card h3 {
+    margin: 10px 0 5px;
+    font-size: 18px;
+}
+
+.struktur-card span {
     color: var(--green);
-    margin-bottom: 4px;
-    font-size: 16px;
-}
-
-.member-card span {
-    font-size: 13px;
-    font-weight: 600;
-}
-
-.member-card p {
-    font-size: 13px;
-    margin-top: 10px;
-}
-
-/* =====================================================
-   TABLE (DAFTAR HUKUM)
-===================================================== */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 18px;
-}
-
-table th,
-table td {
-    border: 1px solid #ddd;
-    padding: 12px;
+    font-weight: bold;
     font-size: 14px;
 }
 
-table th {
-    background: var(--green);
-    color: #fff;
+.struktur-card p {
+    font-size: 14px;
+    margin-top: 10px;
+    color: #555;
 }
 
-.doc-btn {
-    background: var(--green);
-    color: #fff;
-    padding: 6px 14px;
-    border-radius: 4px;
-    font-size: 12px;
-    text-decoration: none;
+/* =====================================================
+   UNIT USAHA
+===================================================== */
+.usaha-section {
+    margin-bottom: 70px;
+}
+
+.usaha-section h3 {
+    color: var(--green);
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.usaha-section p {
+    max-width: 900px;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.usaha-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+.usaha-gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.usaha-gallery img:hover {
+    transform: scale(1.04);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
 /* =====================================================
@@ -281,69 +291,7 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
-/* =========================
-   SECTION DIVIDER
-========================= */
-.divider {
-    width: 80px;
-    height: 4px;
-    background: #0f766e;
-    margin: 15px auto 30px;
-    border-radius: 5px;
-}
 
-/* =========================
-   STRUKTUR ORGANISASI
-========================= */
-.struktur-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.struktur-card {
-    background: #ffffff;
-    border-radius: 12px;
-    padding: 25px;
-    text-align: center;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    transition: 0.3s ease;
-}
-
-.struktur-card:hover {
-    transform: translateY(-8px);
-}
-
-.struktur-card img {
-    width: 140px;
-    height: 140px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 4px solid #0f766e;
-    margin-bottom: 15px;
-}
-
-.struktur-card h3 {
-    margin: 10px 0 5px;
-    font-size: 18px;
-}
-
-.struktur-card span {
-    color: #0f766e;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-.struktur-card p {
-    font-size: 14px;
-    margin-top: 10px;
-    color: #555;
-}
-
-/* =========================
-   REVEAL ANIMATION
-========================= */
 .reveal {
     opacity: 0;
     transform: translateY(40px);
@@ -355,41 +303,264 @@ footer {
     transform: translateY(0);
 }
 /* =========================
-   UNIT USAHA
+   DAFTAR HUKUM TABLE STYLE
 ========================= */
 
-.usaha-section {
-    margin-bottom: 70px;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
-.usaha-section h3 {
-    color: #0f766e;
-    font-size: 22px;
+table thead {
+    background: var(--green);
+    color: #ffffff;
+}
+
+table th {
+    padding: 14px 12px;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 600;
+}
+
+table td {
+    padding: 14px 12px;
+    font-size: 14px;
+    border-bottom: 1px solid #e5e7eb;
+    vertical-align: middle;
+}
+
+table tbody tr:hover {
+    background: #f0fdf4;
+}
+
+/* align columns */
+table td:nth-child(1),
+table td:nth-child(4) {
+    text-align: center;
+    width: 80px;
+}
+
+table td:nth-child(5) {
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* action buttons */
+.doc-btn {
+    display: inline-block;
+    margin: 3px 4px;
+    padding: 6px 14px;
+    font-size: 12px;
+    border-radius: 5px;
+    background: var(--green);
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.25s ease;
+}
+
+.doc-btn:hover {
+    background: var(--green-dark);
+    transform: translateY(-2px);
+}
+
+/* mobile fix */
+@media (max-width: 768px) {
+    table {
+        font-size: 12px;
+    }
+
+    table th,
+    table td {
+        padding: 10px 8px;
+    }
+
+    .doc-btn {
+        font-size: 11px;
+        padding: 5px 10px;
+    }
+}
+/* =====================================================
+   DAFTAR HUKUM – MODERN UI
+===================================================== */
+
+.hukum-table-wrapper {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 30px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    margin-top: 30px;
+    overflow-x: auto;
+}
+
+/* TABLE */
+.hukum-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.hukum-table th {
+    background: var(--green);
+    color: #fff;
+    padding: 14px;
+    text-align: left;
+}
+
+.hukum-table td {
+    padding: 14px;
+    border-bottom: 1px solid #eee;
+}
+
+.hukum-table tr:hover {
+    background: #f8faf9;
+}
+
+/* ACTION BUTTONS */
+.hukum-action {
+    display: flex;
+    gap: 10px;
+}
+
+.hukum-action a {
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+/* VIEW */
+.hukum-action .view {
+    background: #e6f6ee;
+    color: var(--green);
+    border: 1px solid var(--green);
+}
+
+.hukum-action .view:hover {
+    background: var(--green);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* DOWNLOAD */
+.hukum-action .download {
+    background: var(--green);
+    color: #fff;
+}
+
+.hukum-action .download:hover {
+    background: var(--green-dark);
+    transform: translateY(-2px);
+}
+/* =========================
+   SARAN CARD
+========================= */
+
+.saran-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 40px 30px;
+    max-width: 700px;
+    margin: 40px auto;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+}
+
+.saran-card:hover {
+    transform: translateY(-6px);
+}
+
+.saran-icon {
+    font-size: 52px;
+    margin-bottom: 15px;
+}
+
+.saran-card h3 {
+    color: var(--green);
     margin-bottom: 10px;
+    font-size: 22px;
 }
 
-.usaha-section p {
-    max-width: 900px;
-    margin-bottom: 20px;
+.saran-card p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 25px;
     line-height: 1.8;
 }
 
-.usaha-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 18px;
+.saran-note {
+    font-size: 13px;
+    color: #666;
+    margin-top: 20px;
+}
+/* =========================
+   SARAN ICON ANIMATION
+========================= */
+
+.saran-card:hover .saran-icon {
+    animation: floatIcon 0.8s ease-in-out infinite alternate;
 }
 
-.usaha-gallery img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-    transition: 0.3s;
-    cursor: pointer;
+@keyframes floatIcon {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-8px);
+    }
+}
+/* =========================
+   HERO TEXT ANIMATION
+========================= */
+
+.hero h1,
+.hero p {
+    opacity: 0;
+    transform: translateY(25px);
+    animation: heroFadeUp 1s ease forwards;
 }
 
-.usaha-gallery img:hover {
-    transform: scale(1.04);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+.hero p {
+    animation-delay: 0.3s;
+}
+
+@keyframes heroFadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* =========================
+   FLOATING WHATSAPP ICON
+========================= */
+
+.wa-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #25D366;
+    color: #ffffff;
+    font-size: 26px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    z-index: 9999;
+    transition: 0.3s ease;
+}
+
+.wa-float:hover {
+    transform: scale(1.1);
+    background: #1ebe5d;
 }
